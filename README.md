@@ -18,10 +18,12 @@ Getting Started
 
 > Clone this repository.
 
-> Install the required packages listed in the requirements.txt file.
+ Install the required packages listed in the requirements.txt file.
 > Run python manage.py migrate to apply the database migrations.
-> Create a superuser with python manage.py createsuperuser.
+ Create a superuser with python manage.py createsuperuser.
 > Run python manage.py runserver to start the development server.
-> Visit http://localhost:8000 in your web browser to view the website.
+ Visit http://localhost:8000 in your web browser to view the website.
+
 ### Deployment
+
 > To deploy this website to a production server, you can use a service like Heroku or PythonAnywhere. Before deploying, make sure to set the SECRET_KEY and DEBUG environment variables as appropriate for your deployment environment.
