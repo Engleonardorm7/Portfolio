@@ -1,63 +1,85 @@
 {% extends 'layout.html' %} 
 
-{% block content %} 
 
+{% block content %}
 {% load static %}
 
-<header class="row bg-black">
-  <div class="col-md-4">
-    <img
-      src="{% static 'portfolio/shutterstock_605291450.jpg' %}"
-      alt=""
-      width="400"
-      height="300"
-    />
-  </div>
-
-  <div class="col-md-8 my-auto">
-    <h1><strong>Leonardo Rodriguez</strong></h1>
-    <h3>Python Backend Developer</h3>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat tenetur
-      quas, dolores aperiam, temporibus eum rerum exercitationem dignissimos
-      pariatur excepturi iure natus perspiciatis minima minus autem. Commodi
-      ipsum voluptatibus labore fugit, esse quibusdam repellendus praesentium!
-      Excepturi repellat, eaque dolor reiciendis nisi tempora suscipit! Rem
-      earum eveniet a sapiente nostrum, exercitationem veniam esse praesentium
-      cum magni ea placeat repudiandae, aliquid ducimus amet numquam ad. Amet
-      vitae maiores hic et distinctio nihil illum officiis excepturi omnis,
-      odit, ex eligendi voluptatem facilis mollitia! Nihil aperiam eius nesciunt
-      expedita illum obcaecati odio veritatis corporis ad soluta impedit
-      explicabo est minima optio dolor, eos error!
-    </p>
-    <a
-      href="{% static 'portfolio/CV1.2.pdf' %} "
-      target="_blank"
-      class="btn btn-primary btn-lg rounded-0 my-3"
-      >Download CV</a
-    >
-  </div>
-</header>
-
-<div class="row my-4 text-center">
-
-    <h3>My Projects</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, qui!</p>
-    {% for project in projects %}
-        <div class="col md-4 p-4">
-            <div class="card bg-black card-project">
-                <img src="{{project.image.url}}" alt="project.title" class="card-img-top"/>
-                <div class="card-body">
-                    <h2>{{project.title}}</h2>
-                    <p>{{project.description}}</p>
-                    
-                    {% if project.url %}
-                        <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm" target="_blank">{{project.title}}</a>
-                    {% endif %} 
-                </div>
-            </div>
+  <header>
+  </header>
+    <main>
+      <section class="container">
+        <div>
+          <img src="{% static 'portfolio/shutterstock_605291450.jpg' %}" alt="">
         </div>
+    
+        <div class="description">
+          <h1><strong>Leonardo Rodriguez</strong></h1>
+          <h3>Python Backend Developer</h3>
+          <p>
+            Mechatronic Engineer with more than 6 years of experience in different
+            fields of mechatronics and a strong focus on programming. Thanks to my
+            university studies and personal projects, I have developed skills in
+            programming languages such as Python, Java, C/C++, JavaScript as well as frameworks
+            like Django, flask and FastApi. Currently, I am looking to focus on my career as
+            a backend developer and take advantage of my experience and passion for
+            programming to contribute to a high-performing team.
+          </p>
+          <div class ="button">
+              <button onclick="window.open('{% static 'portfolio/CV1.2.pdf' %}', '_blank')"
+            class="download_button">
+            Download CV
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    
 
-    {% endfor %} 
-    {% endblock content %}
-</div>
+    
+
+ 
+
+  <div>
+      <a href="https://www.linkedin.com/in/leonardo-rodriguez-16a941107/"
+        class="btn btn-light rounded-5 btn-sm"
+        target="_blank"
+      ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+          <path d="M8 11l0 5"></path>
+          <path d="M8 8l0 .01"></path>
+          <path d="M12 16l0 -5"></path>
+          <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+      </svg>
+      </a>
+  </div>
+
+  <div >
+    <h3 >My Projects</h3>
+    <p>
+      {% comment %}  {% endcomment %}
+    </p>
+    <section class="project_container">
+      {% for project in projects %}
+      <div class="card-project">
+        <div>
+          <img
+            src="{{project.image.url}}" alt="{{project.title}}"/>
+          <div class="card-description">
+            <h2>{{project.title}}</h2>
+            <p>{{project.description}}</p>
+
+            {% if project.url %}
+            <a href="{{project.url}}" class="btn btn-light rounded-5 btn-sm" target="_blank" >logo de github</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      
+
+      {% endfor %}
+    </div>
+  </section>
+  
+  {% endblock content %}
+

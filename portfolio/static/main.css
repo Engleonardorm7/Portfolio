@@ -1,12 +1,118 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-style: Sans-serif;
+}
 body{
-    background: #090909;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    
 }
 
-.bg-black{
-    background: #000;
-} 
+
+.container div{
+    width: auto;
+    height: auto;
+}
+
+.container{
+    border:0.3 rem solid black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.description p{
+    width: 400px;
+    color: black;
+    text-align: justify;
+
+}
+.button{
+    margin: 20px;
+    justify-content: center;
+    display: flex;
+}
+
+
+.project_container{
+    display:flex; 
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card-description h2,p{
+    justify-content: center;
+    color: black;
+    display:flex;
+    
+
+}
+
+
+h3, h1{
+    margin-bottom: 10px;
+    justify-content: center;
+    color: black; 
+    display:flex;
+  }
+
+img {
+    width: 300px;
+  }
+
+ 
 
 .card-project:hover{
     border:1px solid #fff;
     cursor: pointer;
+}
+
+
+
+
+
+
+
+.download_button{
+    background: black;
+    cursor: pointer;
+    border: none;
+    padding: 16px 32px;
+    -webkit-text-fill-color: white;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 24px;
+}
+.download_button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        red,blue,deeppink,blue,red,blue,deeppink, blue
+        
+        );
+        background-size: 800%;
+        border-radius: 10px;
+        filter: blur(8px);
+        animation: glowing 20s linear infinite;
+}
+@keyframes glowing{
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
 }
