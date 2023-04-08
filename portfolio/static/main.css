@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
 :root{
     --bg-color:black;
     var(--bg-color);
@@ -7,11 +10,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 html{
     font-size: 62.5%;
     scroll-behavior: smooth;
+    
 }
 body{   
     width: 100vw;
@@ -22,6 +26,7 @@ body{
  
 /* -------------NAVBAR----------------- */
 .navbar {
+    font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,11 +34,16 @@ body{
     background-color: white;
     color: black;
     font-size: 18px;
-    padding: 0 20px;
+    padding: 0 50px;
+    text-decoration: none;
+    color: inherit;
   }
   
   
   .navbar-right {
+    padding-right: 50px;
+    text-decoration: none;
+    color: inherit;
     color: white;
     display: flex;
     justify-content: flex-end;
@@ -104,7 +114,7 @@ body{
     flex-direction: column;
     text-align: center;
     align-items: center;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.7), 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.7), 0 0 20px rgba(0, 0, 0, 1);
     
     
 }
@@ -131,14 +141,15 @@ h1{
     justify-content: center;
     color: black; 
     display:flex;
+     
   }
-  h2{
-    font-size: 2.5rem;
-    
-    
-    color: black; 
-   
-  }
+h2{
+font-size: 2.5rem;
+
+
+color: black; 
+
+}
 h3{
     
     font-size: 2rem;
@@ -147,8 +158,11 @@ h3{
     color: black; 
     display:flex;
   }
+
+
 .photo img{
     
+    height: 250px;
     border-radius: 46%;
     width: 200px;
     
@@ -173,12 +187,12 @@ h3{
   }
 
 .each-project:hover{
-    border-inline: 1px solid black;
+    border-inline: 1px solid transparent;
     
     cursor: pointer;
     
 }
-.imagen{
+.logo{  /* Etiqueta que contiene los logos */
     position: relative; /* Hace que el contenedor sea el elemento de referencia para los elementos que contenga */
   width: 300px; /* Define el ancho del contenedor */
   height: 200px; /* Define la altura del contenedor */
@@ -190,9 +204,16 @@ h3{
     right: 0px; /* Posiciona el logro 10 píxeles desde la parte derecha del contenedor */
    
      border-radius: 3px;
-     
-    
   }
+.html_logo{
+    margin: 0;
+    padding: 0;
+    position:absolute;
+    top:-5px;
+    right: -8px;
+    border-radius: 3px;
+
+}
 
 
 
