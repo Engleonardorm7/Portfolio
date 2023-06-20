@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
+/* @import url('https://fonts.google.com/specimen/Montserrat'); */
 
 :root{
     --bg-color:black;
@@ -21,7 +21,7 @@ body{
     width: 100vw;
     height: 100vh;
     background-color: white;
-    
+    /* background-image: linear-gradient(to bottom, #0a0a0a, #f2f2f2); */
 }
  
 /* -------------NAVBAR----------------- */
@@ -44,13 +44,27 @@ body{
     padding-right: 50px;
     text-decoration: none;
     color: inherit;
-    color: white;
+     
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 20px;
+    gap: 70px;
   }
-  
+  .uno:hover{
+    
+    border-inline: 1px solid transparent;
+    cursor: pointer;
+}
+.dos:hover{
+    
+    border-inline: 1px solid transparent;
+    cursor: pointer;
+}
+  .Leonardo:hover{
+    
+    border-inline: 1px solid transparent;
+    cursor: pointer;
+}
 
   
 /* ----------------------------------------------------- */
@@ -203,7 +217,7 @@ h3{
     top: 0px; /* Posiciona el logro 10 píxeles desde la parte superior del contenedor */
     right: 0px; /* Posiciona el logro 10 píxeles desde la parte derecha del contenedor */
    
-     border-radius: 3px;
+    border-radius: 3px;
   }
 .html_logo{
     margin: 0;
@@ -214,7 +228,12 @@ h3{
     border-radius: 3px;
 
 }
-
+.fastAPI{
+ position: absolute;
+ top: 0px;
+ right: -8px;
+ border-radius: 3px;
+}
 
 
 

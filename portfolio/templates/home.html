@@ -72,6 +72,11 @@
                   {% include 'partials/html_css_logo.html' %}
                 </a>
               {% endif %}
+              {% if project.tools_box == "fastAPI" %}              
+                <a class="fastAPI" href="#">
+                  {% include 'partials/fastAPI.html' %}
+                </a>
+              {% endif %}
               <img src="{{project.image.url}}" alt="{{project.title}}"/>
             </div>
             <div class="card-description">

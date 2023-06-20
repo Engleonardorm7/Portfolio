@@ -8,6 +8,8 @@ class Project(models.Model):
         ('html', 'HTML'),
         ('css', 'CSS'),
         ('python', 'Python'),
+        ('fastAPI','FastAPI'),
+        ('Flask','Flask'),
     ]
     
     title = models.CharField(("Title"), max_length=100,)
