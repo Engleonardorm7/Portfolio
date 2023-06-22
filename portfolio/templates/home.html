@@ -29,7 +29,7 @@
 
           <div class="social-networks">
               
-            <a href="https://www.linkedin.com/in/leonardo-rodriguez-16a941107/" target="_blank">
+            <a href="https://www.linkedin.com/in/leonardo-rodriguez-16a941107/" style="text-decoration: none;" target="_blank">
             {% include 'partials/linkedin_logo.html' %}
             </a>
 
@@ -59,51 +59,66 @@
           {% comment %}  {% endcomment %}
         </p>
       </div>
-      <div>
+      <div class="each-project">
         {% for project in projects %}
         {% comment %} <div class="card-project"> {% endcomment %}
           
-          <div class="each-project">
+          {% comment %} <div class="each-project"> {% endcomment %}
             
             <figure>
               <img src="{{project.image.url}}" alt="{{project.title}}"/>
 
               <div class="capa">
-                {% comment %} <figure> {% endcomment %}
-                  {% if project.tools_box == "django" %}              
-                    <a class="django" href="#">
-                      {% include 'partials/logo_django.html' %}
-                    </a>
-                  {% endif %}
-                  {% if project.tools_box == "html" %}              
-                    <a class="html_logo" href="#">
-                      {% include 'partials/html_css_logo.html' %}
-                    </a>
-                  {% endif %}
-                  {% if project.tools_box == "fastAPI" %}              
-                    <a class="fastAPI" href="#">
-                      {% include 'partials/fastAPI.html' %}
-                    </a>
-                  {% endif %}
-                {% comment %} </figure> {% endcomment %}
-
                 <div class="card-description">
                   <h2>{{project.title }}</h2>
                   
                   <p>{{project.description}}</p>
-                
-                  {% if project.url %}
-                    <a href="{{project.url}}" class="btn btn-light rounded-5 btn-sm" target="_blank" >
-                      {% include 'partials/git_logo.html' %}
+                </div>
+                  
+                <div class="logos">
+                  {% comment %} <figure> {% endcomment %}
+                  {% if project.tools_box == "django" %}              
+                    <a class="django" >
+                      {% include 'partials/logo_django.html' %}
                     </a>
                   {% endif %}
+                  {% if project.tools_box == "html" %}              
+                    <a class="html_logo" >
+                      {% include 'partials/html_css_logo.html' %}
+                    </a>
+                  {% endif %}
+                  {% if project.tools_box2 == "django" %}              
+                    <a class="django" >
+                      {% include 'partials/logo_django.html' %}
+                    </a>
+                  {% endif %}
+                  {% if project.tools_box == "fastAPI" %}              
+                    <a class="fastAPI" >
+                      {% include 'partials/fastAPI.html' %}
+                    </a>
+                  {% endif %}
+                  {% if project.tools_box == "Flask" %}              
+                    <a class="flask" >
+                      {% include 'partials/flask_logo.html' %}
+                    </a>
+                  {% endif %}
+                  <div class="logo_git">
+                    {% if project.url %}
+                    <a href="{{project.url}}" class="btn btn-light rounded-5 btn-sm" target="_blank" >
+                      {% include 'partials/git_logo2.html' %}
+                    </a>
+                  {% endif %}
+                  </div>
+                  
+                  {% comment %} </figure> {% endcomment %}
                 </div>
+                
               </div>
             </figure>
               
             
             
-          </div>
+          {% comment %} </div> {% endcomment %}
         {% comment %} </div> {% endcomment %}
         {% endfor %}
       
