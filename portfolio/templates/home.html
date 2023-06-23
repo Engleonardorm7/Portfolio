@@ -18,13 +18,7 @@
           <h1><strong>Leonardo Rodriguez</strong></h1>
           <h3>Python Backend Developer</h3>
           <p>
-            Mechatronic Engineer with more than 6 years of experience in different
-            fields of mechatronics and a strong focus on programming. Thanks to my
-            university studies and personal projects, I have developed skills in
-            programming languages such as Python, Java, C/C++, JavaScript as well as frameworks
-            like Django, flask and FastApi. Currently, I am looking to focus on my career as
-            a backend developer and take advantage of my experience and passion for
-            programming to contribute to a high-performing team.
+            Mechatronic Engineer with more than 6 years of experience in various fields of mechatronics, with a strong passion for programming. I am currently seeking an opportunity to align my career focus with my passion for programming, allowing me to work in a field where I can fully utilize and develop my skills. I have a solid foundation in programming languages such as Python, Java, C/C++, JavaScript, as well as experience with frameworks like Django, Flask, and FastAPI. I am eager to contribute to a team and make a meaningful impact with my experience and enthusiasm for programming.
           </p>
 
           <div class="social-networks">
@@ -87,11 +81,7 @@
                       {% include 'partials/html_css_logo.html' %}
                     </a>
                   {% endif %}
-                  {% if project.tools_box2 == "django" %}              
-                    <a class="django" >
-                      {% include 'partials/logo_django.html' %}
-                    </a>
-                  {% endif %}
+                  
                   {% if project.tools_box == "fastAPI" %}              
                     <a class="fastAPI" >
                       {% include 'partials/fastAPI.html' %}
@@ -102,17 +92,129 @@
                       {% include 'partials/flask_logo.html' %}
                     </a>
                   {% endif %}
-                    
+                  {% if project.tools_box == "python" %}              
+                    <a class="django" >
+                      {% include 'partials/logo_python.html' %}
+                    </a>
+                  {% endif %}
+                  {% if project.tools_box == "javascript" %}              
+                    <a class="django" >
+                      {% include 'partials/logo_javascript.html' %}
+                    </a>
+                  {% endif %}
+
+{% comment %} -----------------------toolbox2 {% endcomment %}
+
+                  {% if project.tools_box2 == "django" %}              
+                    <a class="django" >
+                      {% include 'partials/logo_django.html' %}
+                    </a>
+                  {% endif %}
+                  {% if project.tools_box2 == "html" %}              
+                    <a class="html_logo" >
+                      {% include 'partials/html_css_logo.html' %}
+                    </a>
+                  {% endif %}
                   
+                  {% if project.tools_box2 == "fastAPI" %}              
+                    <a class="fastAPI" >
+                      {% include 'partials/fastAPI.html' %}
+                    </a>
+                  {% endif %}
+                  {% if project.tools_box2 == "Flask" %}              
+                    <a class="flask" >
+                      {% include 'partials/flask_logo.html' %}
+                    </a>
+                  {% endif %}
+                  {% if project.tools_box2 == "python" %}              
+                    <a class="python" >
+                      {% include 'partials/logo_python.html' %}
+                    </a>
+                  {% endif %}
+                  {% if project.tools_box2 == "javascript" %}              
+                    <a class="javascript" >
+                      {% include 'partials/logo_js.html' %}
+                    </a>
+                  {% endif %}
+                  {% comment %} _______________toolbox3___________ {% endcomment %}
+                  {% if project.tools_box3 == "django" %}              
+                    <a class="django" >
+                      {% include 'partials/logo_django.html' %}
+                    </a>
+                  {% endif %}
+                  {% if project.tools_box3 == "html" %}              
+                    <a class="html_logo" >
+                      {% include 'partials/html_css_logo.html' %}
+                    </a>
+                  {% endif %}
+                  
+                  {% if project.tools_box3 == "fastAPI" %}              
+                    <a class="fastAPI" >
+                      {% include 'partials/fastAPI.html' %}
+                    </a>
+                  {% endif %}
+                  {% if project.tools_box3 == "Flask" %}              
+                    <a class="flask" >
+                      {% include 'partials/flask_logo.html' %}
+                    </a>
+                  {% endif %}
+                  {% if project.tools_box3 == "python" %}              
+                    <a class="python" >
+                      {% include 'partials/logo_python.html' %}
+                    </a>
+                  {% endif %}
+                  {% if project.tools_box3 == "javascript" %}              
+                    <a class="javascript" >
+                      {% include 'partials/logo_js.html' %}
+                    </a>
+                  {% endif %}
+
+{% comment %} -----------------------toolbox4 {% endcomment %}
+
+                  {% if project.tools_box4 == "django" %}              
+                    <a class="django" >
+                      {% include 'partials/logo_django.html' %}
+                    </a>
+                  {% endif %}
+                  {% if project.tools_box4 == "html" %}              
+                    <a class="html_logo" >
+                      {% include 'partials/html_css_logo.html' %}
+                    </a>
+                  {% endif %}
+                  
+                  {% if project.tools_box4 == "fastAPI" %}              
+                    <a class="fastAPI" >
+                      {% include 'partials/fastAPI.html' %}
+                    </a>
+                  {% endif %}
+                  {% if project.tools_box4 == "Flask" %}              
+                    <a class="flask" >
+                      {% include 'partials/flask_logo.html' %}
+                    </a>
+                  {% endif %}
+                  {% if project.tools_box4 == "python" %}              
+                    <a class="python" >
+                      {% include 'partials/logo_python.html' %}
+                    </a>
+                  {% endif %}
+                  {% if project.tools_box4 == "javascript" %}              
+                    <a class="javascript" >
+                      {% include 'partials/logo_js.html' %}
+                    </a>
+                  {% endif %}
+
+
+
+
                   {% comment %} </figure> {% endcomment %}
                 </div>
-                <div class="logo_git">
-                  {% if project.url %}
-                  <a href="{{project.url}}" class="btn btn-light rounded-5 btn-sm" target="_blank" >
-                    {% include 'partials/git_logo2.html' %}
-                  </a>
-                {% endif %}
-                </div>
+                  <div class="logo_git">
+                    {% if project.url %}
+                    <a href="{{project.url}}" class="btn btn-light rounded-5 btn-sm" target="_blank" >
+                      {% include 'partials/git_logo2.html' %}
+                    </a>
+                    {% endif %}
+                  </div>
               </div>
             </figure>
               

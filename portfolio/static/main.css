@@ -194,9 +194,9 @@ h3{
 .each-project figure .card-description h2{
     color: white;
     font-weight: 400;
-    margin-bottom: 30px;
     transition: all 500ms ease-out;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 .each-project figure .card-description p{
     color:white;
@@ -209,11 +209,13 @@ h3{
 }
 .each-project figure .capa .logos{
     text-align: center;
+    margin-bottom: 0px;
     
 }
 .each-project figure .capa .logo_git{
     text-align: right;
     margin-right: 50px;
+    margin-bottom: 200px;
 }
 /* --------------------------------------------------------------------- */
 
