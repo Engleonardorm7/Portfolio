@@ -77,8 +77,9 @@ body{
 }
 .description {
     
-    margin-left: 150px;
-    margin-right: 100px;
+    margin-left: 20%;
+    margin-right: 20%;
+    
 
 }
 .button{
@@ -86,13 +87,14 @@ body{
     justify-content: center;
     display: flex;
 }
+
 .description p {
     font-size: 1.5rem;
     color: #707070;
     display: flex;
-    max-width: 900px;
+    max-width: 100%;
     word-wrap: break-word;
-    text-align: left;
+    text-align: justify;
     align-items: justify;
 }
 
@@ -144,6 +146,7 @@ h3{
     flex-wrap: wrap;
     justify-content: flex-start;
     max-width: 100%;
+    justify-content: center;
     
 }
 
@@ -177,6 +180,7 @@ h3{
     opacity: 0;
     visibility: hidden;
     text-align: center;
+    /* text-align: center; */
 }
 .each-project figure:hover > .capa{
     opacity: 1;
@@ -203,17 +207,13 @@ h3{
     margin: auto;
     margin-bottom: 30px;
 }
-.capa a{
-    transform:scale(1.5);
-    padding-left: 130px;
+.each-project figure .capa .logos{
+    text-align: center;
     
 }
-
-.capas .logos{
-    display: block;
-    border: none; 
-    margin: 0;
-
+.each-project figure .capa .logo_git{
+    text-align: right;
+    margin-right: 50px;
 }
 /* --------------------------------------------------------------------- */
 

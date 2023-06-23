@@ -102,17 +102,17 @@
                       {% include 'partials/flask_logo.html' %}
                     </a>
                   {% endif %}
-                  <div class="logo_git">
-                    {% if project.url %}
-                    <a href="{{project.url}}" class="btn btn-light rounded-5 btn-sm" target="_blank" >
-                      {% include 'partials/git_logo2.html' %}
-                    </a>
-                  {% endif %}
-                  </div>
+                    
                   
                   {% comment %} </figure> {% endcomment %}
                 </div>
-                
+                <div class="logo_git">
+                  {% if project.url %}
+                  <a href="{{project.url}}" class="btn btn-light rounded-5 btn-sm" target="_blank" >
+                    {% include 'partials/git_logo2.html' %}
+                  </a>
+                {% endif %}
+                </div>
               </div>
             </figure>
               
