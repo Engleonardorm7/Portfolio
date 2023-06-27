@@ -29,10 +29,8 @@ project2 = Project(
     url='https://github.com/Engleonardorm7/Django/tree/main/Gym_progression',
     tools_box='django',
     tools_box2='python',
-    tools_box3='html')
-image_path = os.path.join(settings.MEDIA_ROOT, 'portfolio/images/gym_progression.png')
-
-with open(image_path, 'rb') as file:
-    project2.image.save('gym_progression.png', File(file), save=True)
+    tools_box3='html',
+    image=os.path.join(settings.MEDIA_ROOT, 'portfolio/images/gym_progression.png')
+)
 
 project2.save()
