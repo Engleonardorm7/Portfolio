@@ -1,4 +1,5 @@
 from portfolio.models import Project
+from django.core.files import File
 
 project1 = Project(
     title='Portfolio', 
@@ -6,9 +7,14 @@ project1 = Project(
     url='https://github.com/Engleonardorm7/Portfolio',
     tools_box='django',
     tools_box2='python',
-    tools_box3='html'),
-project1.image.save('media/portfolio/images/Portfolio.png', open('media/portfolio/images/Portfolio.png', 'rb'), 
-save=True)
+    tools_box3='html'
+)
+
+# Guardar la imagen
+with open('media/portfolio/images/Portfolio.png', 'rb') as file:
+    project1.image.save('portfolio/images/Portfolio.png', File(file), save=True)
+
+# Guardar el proyecto en la base de datos
 project1.save()
 
 project2 = Project(
@@ -18,6 +24,7 @@ project2 = Project(
     tools_box='django',
     tools_box2='python',
     tools_box3='html'),
-project1.image.save('media/portfolio/images/gym_progression.png', open('media/portfolio/images/gym_progression.png', 'rb'), 
-save=True)
-project1.save()
+with open('media/portfolio/images/gym_progression.png', 'rb') as file:
+    project2.image.save('portfolio/images/gym_progression.png', File(file), save=True)
+
+project2.save()
