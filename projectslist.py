@@ -1,6 +1,8 @@
 from portfolio.models import Project
 from django.core.files import File
 
+Project.objects.all().delete()
+
 project1 = Project(
     title='Portfolio', 
     description='Web page for project showcase with image upload and tool selection for portfolio display.', 
