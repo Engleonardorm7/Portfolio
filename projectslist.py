@@ -32,10 +32,10 @@ project2 = Project(
     tools_box3='html',
     
 )
-image_path = os.path.join(settings.MEDIA_ROOT, 'portfolio/images/gym_progression_yDQJr1E.png')
+image_path = os.path.join(settings.MEDIA_ROOT, 'portfolio/images/shutterstock_605291450.jpg')
 
 with open(image_path, 'rb') as file:
-    project2.image.save('gym_progression_yDQJr1E.png', File(file), save=True)
+    project2.image.save('shutterstock_605291450.jpg')
 
 
 project2.save()
