@@ -12,7 +12,7 @@ project1 = Project(
 
 # Guardar la imagen
 with open('media/portfolio/images/Portfolio.png', 'rb') as file:
-    project1.image.save('portfolio/images/Portfolio.png', File(file), save=True)
+    project1.image.save('Portfolio.png', File(file), save=True)
 
 # Guardar el proyecto en la base de datos
 project1.save()
@@ -25,6 +25,6 @@ project2 = Project(
     tools_box2='python',
     tools_box3='html')
 with open('media/portfolio/images/gym_progression.png', 'rb') as file:
-    project2.image.save('portfolio/images/gym_progression.png', File(file), save=True)
+    project2.image.save('gym_progression.png', File(file), save=True)
 
 project2.save()
