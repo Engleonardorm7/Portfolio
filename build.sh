@@ -10,6 +10,6 @@ python manage.py collectstatic --no-input
 
 # python manage.py shell -c "exec(open('projectslist.py').read())"
 
-# python manage.py dumpdata --exclude auth.permission --exclude contenttypes > data.json
-# python manage.py loaddata data.json
+python manage.py dumpdata --exclude auth.permission --exclude contenttypes > data.json
+python manage.py loaddata data.json
 
