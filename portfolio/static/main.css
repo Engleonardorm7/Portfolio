@@ -263,3 +263,19 @@ h3{
         background-position: 0 0;
     }
 }
+
+
+
+@media (max-width: 768px) {
+    /* Estilos para dispositivos móviles */
+    body {
+      padding: 0 20px; /* Ajusta el padding según tus necesidades */
+    }
+    
+    .navbar {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    
+    /* Otros estilos para dispositivos móviles */
+  }
