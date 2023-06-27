@@ -291,7 +291,7 @@ h3{
     }
   
     .navbar {
-      margin-left: 20px;
+      margin-left: 5%;
       margin-right: 20px;
     }
   
@@ -341,7 +341,7 @@ h3{
     color: black;
     font-size: 18px;
     padding: 0 50px;
-    margin-left: 100px;
+    margin-left: 10%;
     margin-right: 100px;
     text-decoration: none;
     color: inherit;
