@@ -30,7 +30,7 @@ project2 = Project(
     tools_box='django',
     tools_box2='python',
     tools_box3='html',
-    image=os.path.join(settings.MEDIA_ROOT, 'portfolio/images/gym_progression.png')
+    image=os.path.join(settings.MEDIA_ROOT, 'portfolio/images/gym_progression_yDQJr1E.png')
 )
 
 project2.save()
