@@ -89,3 +89,23 @@ project8 = Project(
       
 )
 project8.save()
+
+project9 = Project(
+    title='move data from GitHub to Freshdesk', 
+    description='script created for Transfer all compatible fields from a GitHub User to the Freshdesk Contact', 
+    url='https://github.com/Engleonardorm7/Python-Developer-test/tree/main/4',
+    image='',
+    tools_box='python',
+      
+)
+project9.save()
+
+project10 = Project(
+    title='extract bbc articles', 
+    description='program created using selenium to extract articles from certain sections of https://www.bbc.com/news', 
+    url='https://github.com/Engleonardorm7/Python-Developer-test/blob/main/3.py',
+    image='',
+    tools_box='python',
+      
+)
+project10.save()
