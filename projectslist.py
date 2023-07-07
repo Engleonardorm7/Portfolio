@@ -81,7 +81,7 @@ project7 = Project(
 project7.save()
 
 project8 = Project(
-    title='Movies-CRUD', 
+    title='Hindi Translator', 
     description='script created using scraping to download the content of a web page and translate it into Hindi', 
     url='https://github.com/Engleonardorm7/html-to-hindi-translator',
     image='https://github.com/Engleonardorm7/Portfolio/blob/main/media/portfolio/images/Hindi.png?raw=true',
