@@ -82,7 +82,7 @@ project7.save()
 
 project8 = Project(
     title='Hindi Translator', 
-    description='script created using scraping to download the content of a web page and translate it into Hindi', 
+    description='Script created using scraping to download the content of a web page and translate it into Hindi', 
     url='https://github.com/Engleonardorm7/html-to-hindi-translator',
     image='https://github.com/Engleonardorm7/Portfolio/blob/main/media/portfolio/images/Hindi.png?raw=true',
     tools_box='python',
@@ -91,20 +91,20 @@ project8 = Project(
 project8.save()
 
 project9 = Project(
-    title='move data from GitHub to Freshdesk', 
-    description='script created for Transfer all compatible fields from a GitHub User to the Freshdesk Contact', 
+    title='Move data from GitHub to Freshdesk', 
+    description='Script created for Transfer all compatible fields from a GitHub User to the Freshdesk Contact', 
     url='https://github.com/Engleonardorm7/Python-Developer-test/tree/main/4',
-    image='',
+    image='https://github.com/Engleonardorm7/Portfolio/blob/Deploy/media/portfolio/images/github-freshdesk.png',
     tools_box='python',
       
 )
 project9.save()
 
 project10 = Project(
-    title='extract bbc articles', 
-    description='program created using selenium to extract articles from certain sections of https://www.bbc.com/news', 
+    title='Extract bbc articles', 
+    description='Program created using selenium to extract articles from certain sections of https://www.bbc.com/news', 
     url='https://github.com/Engleonardorm7/Python-Developer-test/blob/main/3.py',
-    image='',
+    image='https://github.com/Engleonardorm7/Portfolio/blob/Deploy/media/portfolio/images/scrapping%20from%20bbc.png',
     tools_box='python',
       
 )
