@@ -79,3 +79,13 @@ project7 = Project(
     tools_box2='python',    
 )
 project7.save()
+
+project8 = Project(
+    title='Movies-CRUD', 
+    description='script created using scraping to download the content of a web page and translate it into Hindi', 
+    url='https://github.com/Engleonardorm7/html-to-hindi-translator',
+    image='https://github.com/Engleonardorm7/Portfolio/blob/main/media/portfolio/images/Hindi.png?raw=true',
+    tools_box='python',
+      
+)
+project8.save()
