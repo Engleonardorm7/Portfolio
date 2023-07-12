@@ -94,7 +94,7 @@ project9 = Project(
     title='Move data from GitHub to Freshdesk', 
     description='Script created for Transfer all compatible fields from a GitHub User to the Freshdesk Contact', 
     url='https://github.com/Engleonardorm7/Python-Developer-test/tree/main/4',
-    image='https://github.com/Engleonardorm7/Portfolio/blob/Deploy/media/portfolio/images/github-freshdesk.png',
+    image='https://github.com/Engleonardorm7/Portfolio/blob/main/media/portfolio/images/github-freshdesk.png?raw=true',
     tools_box='python',
       
 )
@@ -104,7 +104,7 @@ project10 = Project(
     title='Extract bbc articles', 
     description='Program created using selenium to extract articles from certain sections of https://www.bbc.com/news', 
     url='https://github.com/Engleonardorm7/Python-Developer-test/blob/main/3.py',
-    image='https://github.com/Engleonardorm7/Portfolio/blob/Deploy/media/portfolio/images/scrapping%20from%20bbc.png',
+    image='https://github.com/Engleonardorm7/Portfolio/blob/main/media/portfolio/images/scrapping%20from%20bbc.png?raw=true',
     tools_box='python',
       
 )
