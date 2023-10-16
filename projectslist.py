@@ -18,7 +18,7 @@ project1.save()
 
 project11 = Project(
     title='Canvas API', 
-    description='The API is capable of reading information from an XLSX file (containing students grades) and seamlessly sending the respective grades to their corresponding locations on the Canvas platform. This API can process over 500 grades within a matter of seconds.', 
+    description='This API can process over 500 grades within a matter of seconds.', 
     url='https://github.com/Engleonardorm7/Canvas-API',
     image='https://github.com/Engleonardorm7/Portfolio/blob/main/media/portfolio/images/scrapping%20from%20bbc.png?raw=true',
     tools_box='python',
