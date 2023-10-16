@@ -16,6 +16,17 @@ project1 = Project(
 )
 project1.save()
 
+project11 = Project(
+    title='Canvas API', 
+    description='This project aims to read and update student grades in Canvas based on an Excel file.', 
+    url='https://github.com/Engleonardorm7/Canvas-API',
+    image='https://github.com/Engleonardorm7/Portfolio/blob/main/media/portfolio/images/scrapping%20from%20bbc.png?raw=true',
+    tools_box='python',
+      
+)
+project11.save()
+
+
 project2 = Project(
     title='Restaurant API', 
     description='This is a Django REST API that allows you to interact with a simple restaurant management system.', 
@@ -110,12 +121,3 @@ project10 = Project(
 )
 project10.save()
 
-project11 = Project(
-    title='Canvas API', 
-    description='This project aims to read and update student grades in Canvas based on an Excel file.', 
-    url='https://github.com/Engleonardorm7/Canvas-API',
-    image='https://github.com/Engleonardorm7/Portfolio/blob/main/media/portfolio/images/scrapping%20from%20bbc.png?raw=true',
-    tools_box='python',
-      
-)
-project11.save()
