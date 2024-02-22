@@ -121,3 +121,14 @@ project10 = Project(
 )
 project10.save()
 
+project11 = Project(
+    title='My restaurant', 
+    description='Restaurant website created with Django with the option to reserve a table and see the dishes offered', 
+    url='https://github.com/Engleonardorm7/Restaurant-website',
+    image='https://github.com/Engleonardorm7/Portfolio/blob/main/media/portfolio/images/restaurant%20fproject.png?raw=true',
+    tools_box='django',
+    tools_box2='python',
+    tools_box3='html',
+      
+)
+project11.save()
