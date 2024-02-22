@@ -125,7 +125,7 @@ project11 = Project(
     title='My restaurant', 
     description='Restaurant website created with Django with the option to reserve a table and see the dishes offered', 
     url='https://github.com/Engleonardorm7/Restaurant-website',
-    image='https://github.com/Engleonardorm7/Portfolio/blob/Deploy/media/portfolio/images/restaurantproject.png',
+    image='https://github.com/Engleonardorm7/Portfolio/blob/Deploy/media/portfolio/images/restaurantproject.png?raw=true',
     tools_box='django',
     tools_box2='python',
     tools_box3='html',
