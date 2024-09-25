@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
-const ProjectList = () => {
+const Portfolio = () => {
   const [projects, setProjects] = useState([]);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     axios
@@ -10,6 +12,7 @@ const ProjectList = () => {
       .then((response) => setProjects(response.data))
       .catch((error) => console.error(error));
   }, []);
+
   return (
     <div>
       <h1>My projects</h1>
@@ -22,4 +25,4 @@ const ProjectList = () => {
   );
 };
 
-export default ProjectList;
+export default Portfolio;
