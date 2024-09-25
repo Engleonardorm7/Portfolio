@@ -22,7 +22,7 @@ from portfolio import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home,name='home'), 
+    # path('',views.home,name='home'), 
     path('api/', include('portfolio.urls')),
     path('blog/',include('blog.urls')),
 ]
