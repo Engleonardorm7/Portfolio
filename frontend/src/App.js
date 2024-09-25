@@ -81,18 +81,29 @@ const Portfolio = () => {
           <button className="cv-button">Download CV</button>
         </div>
       </div>
+      <div className="brain">
+        {/* Aquí puedes incluir la estructura del cerebro hecho de puntos */}
+      </div>
+      {/* <h1>My projects</h1> */}
       <div className="projects">
-        <h2 className="projects-title">Projects</h2>
-        <div className="brain">
-          {/* Aquí puedes incluir la estructura del cerebro hecho de puntos */}
-        </div>
+        <h2 className="projects-title">My Projects</h2>
         <div className="project-list">
-          <h1>My projects</h1>
-          <ul>
-            {projects.map((project) => (
-              <li key={project.id}>{project.title}</li>
-            ))}
-          </ul>
+          {projects.map((project) => {
+            const imageUrl = project.image.startsWith("http")
+              ? project.image
+              : `http://localhost:8000/media/${project.image}`;
+            return (
+              <div className="project-item" key={project.id}>
+                <img
+                  src={imageUrl}
+                  alt={project.title}
+                  className="project-image"
+                />
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
