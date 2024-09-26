@@ -38,11 +38,13 @@ body {
 
 .title {
   font-size: 2.5em;
+  text-align: center;
 }
 
 .subtitle {
   font-size: 1.5em;
   margin: 10px 0;
+  text-align: center;
 }
 
 .description {
@@ -53,6 +55,7 @@ body {
 
 .buttons {
   margin-top: 20px;
+  text-align: center;
 }
 
 .icon {
@@ -130,6 +133,7 @@ body {
   align-items: center;
   height: 400px;
   margin: 0 auto;
+  max-width: 500px;
 }
 
 .project-list {
@@ -142,6 +146,7 @@ body {
 }
 
 .project-item {
+  position: relative;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -173,27 +178,25 @@ body {
 }
 
 .scroll-button {
-  background: transparent;
+  position: absolute;
+  top: 50%; /* Centrar verticalmente con respecto a las tarjetas */
+  transform: translateY(-50%);
+  background: none;
   border: none;
   cursor: pointer;
-  z-index: 10;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  color: #4504ae;
-  padding: 0;
+  font-size: 24px;
+  z-index: 1;
 }
 
 .scroll-button.left {
-  left: 250px;
+  left: -50px;
 }
 .scroll-button.right {
-  right: 250px;
+  right: -50px;
 }
 .scroll-button svg {
-  width: 40px;
-  height: 40px;
+  width: 70px;
+  height: 70px;
   fill: #4504ae;
   transition: transform 0.3s ease;
 }
@@ -202,7 +205,7 @@ body {
   transform: scale(1.2);
 }
 .projects-indicators {
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 .dot {

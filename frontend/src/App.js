@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {
-  FaLinkedin,
-  FaGithub,
-  FaSun,
-  FaMoon,
-  FaArrowLeft,
-  FaArrowRight,
-} from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaSun, FaMoon } from "react-icons/fa";
 import "./App.css";
+
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
@@ -91,7 +86,7 @@ const Portfolio = () => {
         <h2 className="projects-title">My Projects</h2>
         <div className="projects-wrapper">
           <button className="scroll-button left" onClick={handlePrevProject}>
-            <FaArrowLeft size={30} />
+            <IoIosArrowBack size={30} />
           </button>
           <div className="project-item">
             <img
@@ -104,7 +99,7 @@ const Portfolio = () => {
           </div>
 
           <button className="scroll-button right" onClick={handleNextProject}>
-            <FaArrowRight size={30} />
+            <IoIosArrowForward size={30} />
           </button>
         </div>
         <div className="projects-indicators">
