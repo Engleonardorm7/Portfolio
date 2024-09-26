@@ -1,37 +1,19 @@
-// import logo from "./logo.svg";
-// import "./App.css";
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaSun,
+  FaMoon,
+  FaArrowLeft,
+  FaArrowRight,
+} from "react-icons/fa";
 import "./App.css";
-import { FaLinkedin, FaGithub, FaSun, FaMoon } from "react-icons/fa";
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
 
   useEffect(() => {
     axios
@@ -39,6 +21,26 @@ const Portfolio = () => {
       .then((response) => setProjects(response.data))
       .catch((error) => console.error(error));
   }, []);
+
+  const handleNextProject = () => {
+    setCurrentProjectIndex((prevIndex) =>
+      prevIndex === projects.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const handlePrevProject = () => {
+    setCurrentProjectIndex((prevIndex) =>
+      prevIndex === 0 ? projects.length - 1 : prevIndex - 1
+    );
+  };
+
+  if (projects.length === 0) return <p>Loading ...</p>;
+
+  const currentProject = projects[currentProjectIndex];
+  const imageUrl = currentProject.image.startsWith("http")
+    ? currentProject.image
+    : `http://localhost:8000/media/${currentProject.image}`;
+
   return (
     <div className={`portfolio ${darkMode ? "dark-mode" : "light-mode"}`}>
       <nav className="nav">
@@ -84,26 +86,34 @@ const Portfolio = () => {
       <div className="brain">
         {/* Aquí puedes incluir la estructura del cerebro hecho de puntos */}
       </div>
-      {/* <h1>My projects</h1> */}
-      <div className="projects">
+
+      <div className="projects-section">
         <h2 className="projects-title">My Projects</h2>
-        <div className="project-list">
-          {projects.map((project) => {
-            const imageUrl = project.image.startsWith("http")
-              ? project.image
-              : `http://localhost:8000/media/${project.image}`;
-            return (
-              <div className="project-item" key={project.id}>
-                <img
-                  src={imageUrl}
-                  alt={project.title}
-                  className="project-image"
-                />
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-              </div>
-            );
-          })}
+        <div className="projects-wrapper">
+          <button className="scroll-button left" onClick={handlePrevProject}>
+            <FaArrowLeft size={30} />
+          </button>
+          <div className="project-item">
+            <img
+              src={imageUrl}
+              alt={currentProject.title}
+              className="project-image"
+            />
+            <h3 className="project-title">{currentProject.title}</h3>
+            <p className="project-description">{currentProject.description}</p>
+          </div>
+
+          <button className="scroll-button right" onClick={handleNextProject}>
+            <FaArrowRight size={30} />
+          </button>
+        </div>
+        <div className="projects-indicators">
+          {projects.map((_, index) => (
+            <span
+              className={`dot ${index === currentProjectIndex ? "active" : ""}`}
+              onClick={() => setCurrentProjectIndex(index)}
+            ></span>
+          ))}
         </div>
       </div>
     </div>
