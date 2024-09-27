@@ -1,9 +1,20 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FaLinkedin, FaGithub, FaSun, FaMoon } from "react-icons/fa";
-import "./App.css";
+import {
+  SiPython,
+  SiFlask,
+  SiDjango,
+  SiHtml5,
+  SiCss3,
+  SiFastapi,
+  SiReact,
+  SiTailwindcss,
+} from "react-icons/si";
 
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
+import "./App.css";
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
@@ -35,6 +46,32 @@ const Portfolio = () => {
   const imageUrl = currentProject.image.startsWith("http")
     ? currentProject.image
     : `http://localhost:8000/media/${currentProject.image}`;
+
+  const toolsBox = currentProject.tools_box || [];
+
+  const renderToolIcon = (tool) => {
+    switch (tool.toLowerCase()) {
+      case "python":
+        return <SiPython />;
+      case "flask":
+        return <SiFlask />;
+      case "django":
+        return <SiDjango />;
+      case "html":
+        return <SiHtml5 />;
+      case "css":
+        return <SiCss3 />;
+      case "fastapi":
+        return <SiFastapi />;
+      case "react":
+        return <SiReact />;
+      case "tailwind":
+        return <SiTailwindcss />;
+      default:
+        console.warn(`Unknown tool: ${tool}`);
+        return null;
+    }
+  };
 
   return (
     <div className={`portfolio ${darkMode ? "dark-mode" : "light-mode"}`}>
@@ -89,13 +126,34 @@ const Portfolio = () => {
             <IoIosArrowBack size={30} />
           </button>
           <div className="project-item">
-            <img
-              src={imageUrl}
-              alt={currentProject.title}
-              className="project-image"
-            />
-            <h3 className="project-title">{currentProject.title}</h3>
-            <p className="project-description">{currentProject.description}</p>
+            <div className="project-content">
+              <div className="project-description-container">
+                <h3 className="project-title">{currentProject.title}</h3>
+                <div className="project-description">
+                  <p>{currentProject.description}</p>
+                  <div className="tools-icons">
+                    {console.log(toolsBox)}
+                    {toolsBox.length > 0 ? (
+                      toolsBox.map((tool, index) => (
+                        <span key={index} className="tool-icon">
+                          {console.log(" tool:", tool)}
+                          {renderToolIcon(tool)}
+                        </span>
+                      ))
+                    ) : (
+                      <p>No tools available</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <div className="project-image-container">
+                <img
+                  src={imageUrl}
+                  alt={currentProject.title}
+                  className="project-image"
+                />
+              </div>
+            </div>
           </div>
 
           <button className="scroll-button right" onClick={handleNextProject}>
@@ -110,6 +168,9 @@ const Portfolio = () => {
             ></span>
           ))}
         </div>
+      </div>
+      <div>
+        <SiPython /> {/* Prueba renderizando un ícono directamente */}
       </div>
     </div>
   );
