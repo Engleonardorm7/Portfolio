@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { FaLinkedin, FaGithub, FaSun, FaMoon } from "react-icons/fa";
 import {
@@ -15,17 +15,39 @@ import {
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 import "./App.css";
+import Timeline from "./Timeline";
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+  const [activeSection, setActiveSection] = useState("about");
+
+  const sectionsRef = useRef([]);
 
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8000/api/projects/")
       .then((response) => setProjects(response.data))
       .catch((error) => console.error(error));
+  }, []);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, options);
+    sectionsRef.current.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
   }, []);
 
   const handleNextProject = () => {
@@ -76,11 +98,18 @@ const Portfolio = () => {
   return (
     <div className={`portfolio ${darkMode ? "dark-mode" : "light-mode"}`}>
       <nav className="nav">
-        <h2 className="name">Leonardo Rodriguez</h2>
+        {/* <h2 className="name">Leonardo Rodriguez</h2> */}
         <ul className="nav-links">
-          <li>Contact</li>
-          <li>Projects</li>
-          <li>Papers</li>
+          <li className={activeSection === "Experience" ? "active" : ""}>
+            Experience
+          </li>
+          <li className={activeSection === "projects" ? "active" : ""}>
+            Projects
+          </li>
+          <li className={activeSection === "papers" ? "active" : ""}>Papers</li>
+          <li className={activeSection === "contact" ? "active" : ""}>
+            contact
+          </li>
           <div
             onClick={() => setDarkMode(!darkMode)}
             style={{ cursor: "pointer" }}
@@ -93,18 +122,7 @@ const Portfolio = () => {
       <div className="intro">
         <h1 className="title">Leonardo Rodriguez</h1>
         <h2 className="subtitle"> AI and Web Developer</h2>
-        <p className="description">
-          I am a Mechatronic Engineer with over six years of experience in
-          various fields of mechatronics, and I am currently pursuing a Master's
-          degree in Artificial Intelligence and Robotics. I have a strong
-          passion for programming and I am seeking an opportunity to align my
-          career focus with my passion for programming, artificial intelligence,
-          and robotics. I have a solid foundation in programming languages such
-          as Python, Java, C/C++, and JavaScript, as well as experience with
-          frameworks like Django, Flask, and FastAPI. I am eager to contribute
-          to a team and make a meaningful impact with my experience and
-          enthusiasm for programming.
-        </p>
+        <p className="description">Hi im a ai developer</p>
         <div className="buttons">
           <a href="https://www.linkedin.com" className="icon">
             <FaLinkedin />
@@ -115,11 +133,18 @@ const Portfolio = () => {
           <button className="cv-button">Download CV</button>
         </div>
       </div>
-      <div className="brain">
-        {/* Aquí puedes incluir la estructura del cerebro hecho de puntos */}
+      <div className="Experience">
+        <section id="Experience" ref={(el) => (sectionsRef.current[0] = el)}>
+          Experience
+        </section>
+        {/* <h1 className="Experience">Experience</h1> */}
+        <Timeline></Timeline>
       </div>
 
       <div className="projects-section">
+        <section id="projects" ref={(el) => (sectionsRef.current[1] = el)}>
+          Projects Content
+        </section>
         <h2 className="projects-title">My Projects</h2>
         <div className="projects-wrapper">
           <button className="scroll-button left" onClick={handlePrevProject}>
@@ -131,19 +156,17 @@ const Portfolio = () => {
                 <h3 className="project-title">{currentProject.title}</h3>
                 <div className="project-description">
                   <p>{currentProject.description}</p>
-                  <div className="tools-icons">
-                    {console.log(toolsBox)}
-                    {toolsBox.length > 0 ? (
-                      toolsBox.map((tool, index) => (
-                        <span key={index} className="tool-icon">
-                          {console.log(" tool:", tool)}
-                          {renderToolIcon(tool)}
-                        </span>
-                      ))
-                    ) : (
-                      <p>No tools available</p>
-                    )}
-                  </div>
+                </div>
+                <div className="tools-icons">
+                  {toolsBox.length > 0 ? (
+                    toolsBox.map((tool, index) => (
+                      <span key={index} className="tool-icon">
+                        {renderToolIcon(tool)}
+                      </span>
+                    ))
+                  ) : (
+                    <p>No tools available</p>
+                  )}
                 </div>
               </div>
               <div className="project-image-container">
@@ -169,8 +192,28 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
-      <div>
-        <SiPython /> {/* Prueba renderizando un ícono directamente */}
+      <div className="papers">
+        <section id="papers" ref={(el) => (sectionsRef.current[2] = el)}>
+          Papers Content
+        </section>
+      </div>
+      <div className="about-me">
+        <section id="about" ref={(el) => (sectionsRef.current[2] = el)}>
+          About Content
+        </section>
+        <h1>About me</h1>
+        <p className="description">
+          I am a Mechatronic Engineer with over six years of experience in
+          various fields of mechatronics, and I am currently pursuing a Master's
+          degree in Artificial Intelligence and Robotics. I have a strong
+          passion for programming and I am seeking an opportunity to align my
+          career focus with my passion for programming, artificial intelligence,
+          and robotics. I have a solid foundation in programming languages such
+          as Python, Java, C/C++, and JavaScript, as well as experience with
+          frameworks like Django, Flask, and FastAPI. I am eager to contribute
+          to a team and make a meaningful impact with my experience and
+          enthusiasm for programming.
+        </p>
       </div>
     </div>
   );
