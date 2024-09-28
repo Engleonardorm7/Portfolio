@@ -21,7 +21,7 @@ const Portfolio = () => {
   const [projects, setProjects] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
-  const [activeSection, setActiveSection] = useState("about");
+  const [activeSection, setActiveSection] = useState("");
 
   const sectionsRef = useRef([]);
 
@@ -33,23 +33,29 @@ const Portfolio = () => {
   }, []);
 
   useEffect(() => {
-    const options = {
+    const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5,
+      threshold: 0.4, // Detecta cuando el 50% de la sección está visible
     };
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+          setActiveSection(entry.target.id); // Cambia la sección activa al id de la sección visible
         }
       });
-    }, options);
-    sectionsRef.current.forEach((section) => observer.observe(section));
+    }, observerOptions);
 
-    return () => observer.disconnect();
+    sectionsRef.current.forEach((section) => {
+      if (section) observer.observe(section); // Observa cada sección
+    });
+
+    // Limpia el observer cuando el componente se desmonta
+    return () => {
+      observer.disconnect();
+    };
   }, []);
-
   const handleNextProject = () => {
     setCurrentProjectIndex((prevIndex) =>
       prevIndex === projects.length - 1 ? 0 : prevIndex + 1
@@ -95,26 +101,46 @@ const Portfolio = () => {
     }
   };
 
+  const scrollToSection = (sectionId, index) => {
+    const section = sectionsRef.current[index];
+    section.scrollIntoView({ behavior: "smooth" });
+    setActiveSection(sectionId);
+  };
+
   return (
     <div className={`portfolio ${darkMode ? "dark-mode" : "light-mode"}`}>
       <nav className="nav">
         {/* <h2 className="name">Leonardo Rodriguez</h2> */}
         <ul className="nav-links">
-          <li className={activeSection === "Experience" ? "active" : ""}>
+          <li
+            className={activeSection === "Experience" ? "active" : ""}
+            onClick={() => scrollToSection("Experience", 0)}
+          >
             Experience
           </li>
-          <li className={activeSection === "projects" ? "active" : ""}>
+          <li
+            className={activeSection === "projects" ? "active" : ""}
+            onClick={() => scrollToSection("projects", 1)}
+          >
             Projects
           </li>
-          <li className={activeSection === "papers" ? "active" : ""}>Papers</li>
-          <li className={activeSection === "contact" ? "active" : ""}>
-            contact
+          <li
+            className={activeSection === "papers" ? "active" : ""}
+            onClick={() => scrollToSection("papers", 2)}
+          >
+            Papers
+          </li>
+          <li
+            className={activeSection === "about" ? "active" : ""}
+            onClick={() => scrollToSection("about", 3)}
+          >
+            About
           </li>
           <div
             onClick={() => setDarkMode(!darkMode)}
             style={{ cursor: "pointer" }}
           >
-            {darkMode ? <FaSun size={30} /> : <FaMoon size={30} />}
+            {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
           </div>
         </ul>
       </nav>
@@ -135,7 +161,7 @@ const Portfolio = () => {
       </div>
       <div className="Experience">
         <section id="Experience" ref={(el) => (sectionsRef.current[0] = el)}>
-          Experience
+          **Experience
         </section>
         {/* <h1 className="Experience">Experience</h1> */}
         <Timeline></Timeline>
@@ -167,6 +193,14 @@ const Portfolio = () => {
                   ) : (
                     <p>No tools available</p>
                   )}
+                  <a
+                    className="git"
+                    href={currentProject.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub size={30} />
+                  </a>
                 </div>
               </div>
               <div className="project-image-container">
@@ -197,8 +231,8 @@ const Portfolio = () => {
           Papers Content
         </section>
       </div>
-      <div className="about-me">
-        <section id="about" ref={(el) => (sectionsRef.current[2] = el)}>
+      <div className="about">
+        <section id="about" ref={(el) => (sectionsRef.current[3] = el)}>
           About Content
         </section>
         <h1>About me</h1>

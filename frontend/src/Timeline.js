@@ -18,6 +18,11 @@ const Timeline = () => {
       title: "Graduated in Mechatronic Engineering",
       description: "Graduated with honors from University of Technology.",
     },
+    {
+      date: "2022",
+      title: "Graduated in Mechatronic Engineering",
+      description: "Graduated with honors from University of Technology.",
+    },
   ];
 
   return (
