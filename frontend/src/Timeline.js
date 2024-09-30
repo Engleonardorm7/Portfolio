@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaBriefcase } from "react-icons/fa";
 
 const Timeline = () => {
   const timelineData = [
@@ -19,7 +20,7 @@ const Timeline = () => {
       description: "Graduated with honors from University of Technology.",
     },
     {
-      date: "2022",
+      date: "2015",
       title: "Graduated in Mechatronic Engineering",
       description: "Graduated with honors from University of Technology.",
     },
@@ -27,7 +28,11 @@ const Timeline = () => {
 
   return (
     <div className="timeline-container ">
-      <h2 className="title">Experience</h2>
+      <h2 className="title">
+        {" "}
+        <FaBriefcase className="experience-icon" />
+        Experience
+      </h2>
       <div className="time-line-container">
         {timelineData.map((event, index) => (
           <div

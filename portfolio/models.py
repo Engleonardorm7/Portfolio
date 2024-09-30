@@ -15,7 +15,7 @@ class Project(models.Model):
     title = models.CharField(("Title"), max_length=100,)
     description = models.CharField(("Description"), max_length=250)
     image = models.URLField(("Image URL"), blank=True)
-    image2 = models.ImageField(("Image - (optional)"),upload_to='portfolio/images/', blank=True, null=True)
+    # image2 = models.ImageField(("Image - (optional)"),upload_to='portfolio/images/', blank=True, null=True)
     url = models.URLField(blank=True)
     tools_box=models.JSONField() 
     # tools_box2=models.CharField(max_length=255,choices=tools_choices, blank=True)

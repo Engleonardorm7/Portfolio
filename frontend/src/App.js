@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import { FaLinkedin, FaGithub, FaSun, FaMoon } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaSun, FaMoon, FaCircle } from "react-icons/fa";
 import {
   SiPython,
   SiFlask,
@@ -36,7 +36,7 @@ const Portfolio = () => {
     const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.4, // Detecta cuando el 50% de la sección está visible
+      threshold: 0.5, // Detecta cuando el 50% de la sección está visible
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -68,7 +68,7 @@ const Portfolio = () => {
     );
   };
 
-  if (projects.length === 0) return <p>Loading ...</p>;
+  if (projects.length === 0) return <p>Not connection with database ...</p>;
 
   const currentProject = projects[currentProjectIndex];
   const imageUrl = currentProject.image.startsWith("http")
@@ -144,111 +144,122 @@ const Portfolio = () => {
           </div>
         </ul>
       </nav>
-
-      <div className="intro">
-        <h1 className="title">Leonardo Rodriguez</h1>
-        <h2 className="subtitle"> AI and Web Developer</h2>
-        <p className="description">Hi im a ai developer</p>
-        <div className="buttons">
-          <a href="https://www.linkedin.com" className="icon">
-            <FaLinkedin />
-          </a>
-          <a href="https://github.com" className="icon">
-            <FaGithub />
-          </a>
-          <button className="cv-button">Download CV</button>
+      <section className="header-section">
+        <div className="intro">
+          <h1 className="name-title">Leonardo Rodriguez</h1>
+          <div className="availability">
+            <FaCircle className="icon" color="green" />
+            <span>Available for work</span>
+          </div>
+          <h2 className="subtitle"> AI and Web Developer</h2>
+          <p className="description">
+            Mechatronics Engineer with over 8 years of experience in various
+            engineering fields and a passion for programming, currently pursuing
+            a Master's in{" "}
+            <span className="highlight">
+              Artificial Intelligence and Robotics
+            </span>{" "}
+            in Germany
+          </p>
+          <div className="buttons">
+            <a href="https://www.linkedin.com" className="icons">
+              <FaLinkedin />
+            </a>
+            <a href="https://github.com" className="icons">
+              <FaGithub />
+            </a>
+            <button className="cv-button"> CV</button>
+          </div>
         </div>
-      </div>
-      <div className="Experience">
-        <section id="Experience" ref={(el) => (sectionsRef.current[0] = el)}>
-          **Experience
-        </section>
-        {/* <h1 className="Experience">Experience</h1> */}
-        <Timeline></Timeline>
-      </div>
-
-      <div className="projects-section">
-        <section id="projects" ref={(el) => (sectionsRef.current[1] = el)}>
+      </section>
+      <section id="Experience" ref={(el) => (sectionsRef.current[0] = el)}>
+        <div className="Experience">
+          {/* <h1 className="Experience">Experience</h1> */}
+          <Timeline></Timeline>
+        </div>
+      </section>
+      <section id="projects" ref={(el) => (sectionsRef.current[1] = el)}>
+        <div className="projects-section">
           Projects Content
-        </section>
-        <h2 className="projects-title">My Projects</h2>
-        <div className="projects-wrapper">
-          <button className="scroll-button left" onClick={handlePrevProject}>
-            <IoIosArrowBack size={30} />
-          </button>
-          <div className="project-item">
-            <div className="project-content">
-              <div className="project-description-container">
-                <h3 className="project-title">{currentProject.title}</h3>
-                <div className="project-description">
-                  <p>{currentProject.description}</p>
+          <h2 className="projects-title">My Projects</h2>
+          <div className="projects-wrapper">
+            <button className="scroll-button left" onClick={handlePrevProject}>
+              <IoIosArrowBack size={30} />
+            </button>
+            <div className="project-item">
+              <div className="project-content">
+                <div className="project-description-container">
+                  <h3 className="project-title">{currentProject.title}</h3>
+                  <div className="project-description">
+                    <p>{currentProject.description}</p>
+                  </div>
+                  <div className="tools-icons">
+                    {toolsBox.length > 0 ? (
+                      toolsBox.map((tool, index) => (
+                        <span key={index} className="tool-icon">
+                          {renderToolIcon(tool)}
+                        </span>
+                      ))
+                    ) : (
+                      <p>No tools available</p>
+                    )}
+                    <a
+                      className="git"
+                      href={currentProject.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaGithub size={30} />
+                    </a>
+                  </div>
                 </div>
-                <div className="tools-icons">
-                  {toolsBox.length > 0 ? (
-                    toolsBox.map((tool, index) => (
-                      <span key={index} className="tool-icon">
-                        {renderToolIcon(tool)}
-                      </span>
-                    ))
-                  ) : (
-                    <p>No tools available</p>
-                  )}
-                  <a
-                    className="git"
-                    href={currentProject.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub size={30} />
-                  </a>
+                <div className="project-image-container">
+                  <img
+                    src={imageUrl}
+                    alt={currentProject.title}
+                    className="project-image"
+                  />
                 </div>
-              </div>
-              <div className="project-image-container">
-                <img
-                  src={imageUrl}
-                  alt={currentProject.title}
-                  className="project-image"
-                />
               </div>
             </div>
-          </div>
 
-          <button className="scroll-button right" onClick={handleNextProject}>
-            <IoIosArrowForward size={30} />
-          </button>
+            <button className="scroll-button right" onClick={handleNextProject}>
+              <IoIosArrowForward size={30} />
+            </button>
+          </div>
+          <div className="projects-indicators">
+            {projects.map((_, index) => (
+              <span
+                className={`dot ${
+                  index === currentProjectIndex ? "active" : ""
+                }`}
+                onClick={() => setCurrentProjectIndex(index)}
+              ></span>
+            ))}
+          </div>
         </div>
-        <div className="projects-indicators">
-          {projects.map((_, index) => (
-            <span
-              className={`dot ${index === currentProjectIndex ? "active" : ""}`}
-              onClick={() => setCurrentProjectIndex(index)}
-            ></span>
-          ))}
-        </div>
-      </div>
-      <div className="papers">
-        <section id="papers" ref={(el) => (sectionsRef.current[2] = el)}>
-          Papers Content
-        </section>
-      </div>
-      <div className="about">
-        <section id="about" ref={(el) => (sectionsRef.current[3] = el)}>
+      </section>
+      <section id="papers" ref={(el) => (sectionsRef.current[2] = el)}>
+        <div className="papers">Research</div>
+      </section>
+      <section id="about" ref={(el) => (sectionsRef.current[3] = el)}>
+        <div className="about">
           About Content
-        </section>
-        <h1>About me</h1>
-        <p className="description">
-          I am a Mechatronic Engineer with over six years of experience in
-          various fields of mechatronics, and I am currently pursuing a Master's
-          degree in Artificial Intelligence and Robotics. I have a strong
-          passion for programming and I am seeking an opportunity to align my
-          career focus with my passion for programming, artificial intelligence,
-          and robotics. I have a solid foundation in programming languages such
-          as Python, Java, C/C++, and JavaScript, as well as experience with
-          frameworks like Django, Flask, and FastAPI. I am eager to contribute
-          to a team and make a meaningful impact with my experience and
-          enthusiasm for programming.
-        </p>
-      </div>
+          <h1>About me</h1>
+          <p className="description">
+            I am a Mechatronic Engineer with over six years of experience in
+            various fields of mechatronics, and I am currently pursuing a
+            Master's degree in Artificial Intelligence and Robotics. I have a
+            strong passion for programming and I am seeking an opportunity to
+            align my career focus with my passion for programming, artificial
+            intelligence, and robotics. I have a solid foundation in programming
+            languages such as Python, Java, C/C++, and JavaScript, as well as
+            experience with frameworks like Django, Flask, and FastAPI. I am
+            eager to contribute to a team and make a meaningful impact with my
+            experience and enthusiasm for programming.
+          </p>
+        </div>
+      </section>
     </div>
   );
 };

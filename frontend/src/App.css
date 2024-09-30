@@ -6,6 +6,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .portfolio {
@@ -45,7 +46,23 @@ body {
   font-weight: bold;
   color: #4504ae;
 }
-
+.name-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 0px;
+  font-weight: bold;
+  color: #333;
+}
+.availability {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #4caf50;
+}
+.icon {
+  width: 42px;
+  height: 12px;
+}
 .title {
   font-size: 2.5em;
   text-align: center;
@@ -55,6 +72,7 @@ body {
   font-size: 1.5em;
   margin: 10px 0;
   text-align: center;
+  color: #4504ae;
 }
 
 .description {
@@ -63,32 +81,37 @@ body {
   padding: 0 20px;
   font-size: 1.5rem;
 }
-
+.highlight {
+  font-weight: bold;
+  color: #4504ae;
+}
 .buttons {
   margin-top: 20px;
-  text-align: center;
+  align-items: center;
+  display: flex;
+  gap: 10px;
 }
 
-.icon {
-  font-size: 50px;
+.icons {
+  font-size: 40px;
   color: #333;
-
-  text-decoration: none;
+  display: flex;
+  margin-bottom: 20px;
 }
 
 .cv-button {
-  background: #494949;
+  background: #333;
   cursor: pointer;
   border: none;
-  padding: 16px 32px;
+  padding: 10px 10px;
   -webkit-text-fill-color: white;
-  font-size: 12px;
+  font-size: 20px;
   font-weight: bold;
   position: relative;
-  border-radius: 24px;
-  z-index: 1;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
-.cv-button::before {
+/* .cv-button::before {
   content: "";
   position: absolute;
   top: 0;
@@ -122,24 +145,37 @@ body {
   100% {
     background-position: 0 0;
   }
-}
+} */
 
 .section {
   padding: 100px 20px;
   text-align: center;
 }
-
-.intro {
-  margin-top: 50px;
+.header-section {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
   text-align: center;
+}
+.papers {
+  height: 300px;
+}
+.about {
+  height: 500px;
+}
+.intro {
+  height: 70%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .projects-title {
   font-size: 2em;
   margin-bottom: 20px;
-}
-
-.brain {
 }
 
 .projects-section {
@@ -407,7 +443,9 @@ body {
   color: black;
   padding: 10px;
 }
-
+.light-mode .title {
+  color: black;
+}
 @media (max-width: 600px) {
   .nav {
     flex-direction: column;

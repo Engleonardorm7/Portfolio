@@ -195,6 +195,13 @@ def load_projects():
     reset_project_ids()
     projects = [
             {
+                'title': 'To Do List', 
+                'description': 'This project is a To-Do List App developed as part of my practice using React and Tailwind CSS. The application allows users to create, delete, and mark tasks as completed, offering a clean and styled interface.', 
+                'url': 'https://github.com/Engleonardorm7/TodoList',
+                'image': 'https://github.com/Engleonardorm7/Portfolio/blob/React/media/portfolio/images/Todo-React2.jpg?raw=true',
+                'tools_box': ['react','tailwind'],
+            },
+            {
                 'title': 'Teaching LLMs to Use Tools', 
                 'description': 'This project focuses on teaching large language models (LLMs) to use PowerPoint', 
                 'url': 'https://github.com/Engleonardorm7/Teaching-LLMs-to-use-tools',
