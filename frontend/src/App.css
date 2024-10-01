@@ -13,7 +13,9 @@ body {
   flex: 1;
   padding: 20px;
 }
-
+/* ============================== */
+/* Navbar                         */
+/* ============================== */
 .nav {
   display: flex;
   justify-content: center;
@@ -46,8 +48,28 @@ body {
   font-weight: bold;
   color: #4504ae;
 }
+/* ============================== */
+/* header-section                       */
+/* ============================== */
+
+.header-section {
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+}
+.intro {
+  height: 70%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .name-title {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   margin-top: 0px;
   font-weight: bold;
@@ -58,13 +80,14 @@ body {
   align-items: center;
   font-size: 1rem;
   color: #4caf50;
+  margin-bottom: 1rem;
 }
 .icon {
   width: 42px;
   height: 12px;
 }
 .title {
-  font-size: 2.5em;
+  font-size: 2em;
   text-align: center;
 }
 
@@ -76,10 +99,9 @@ body {
 }
 
 .description {
-  max-width: 900px;
-  margin: auto;
+  max-width: 500px;
   padding: 0 20px;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 .highlight {
   font-weight: bold;
@@ -146,32 +168,115 @@ body {
     background-position: 0 0;
   }
 } */
+/* ============================== */
+/* experience                       */
+/* ============================== */
+.experience-icon {
+  margin-right: 20px;
+  width: 42px;
+  height: 30px;
+  color: #333;
+}
 
-.section {
-  padding: 100px 20px;
-  text-align: center;
+.timeline {
+  padding: 50px 20px;
 }
-.header-section {
-  height: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  text-align: center;
-}
-.papers {
-  height: 300px;
-}
-.about {
-  height: 500px;
-}
-.intro {
-  height: 70%;
 
-  display: flex;
+.timeline-container {
   flex-direction: column;
-  align-items: center;
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 10px 0;
 }
+
+.time-line-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.timeline-item {
+  width: 50%;
+
+  padding: 20px;
+  position: relative;
+}
+
+.timeline-item.right::before {
+  left: -4.5%;
+}
+.timeline-content {
+  padding: 20px;
+  background: transparent;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.timeline-date {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.timeline-company {
+  font-size: 1rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* .timeline-content::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: -8px;
+  border-style: solid;
+  border-width: 8px 0 8px 8px;
+  border-color: transparent transparent transparent #f1f1f1;
+} */
+
+.timeline-item.left {
+  align-self: flex-start;
+  left: -5.2%;
+  height: 90px;
+}
+
+.timeline-item.right {
+  left: 51.5%;
+  height: 90px;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  right: -1%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #4504ae;
+  /* border: 3px solid white; */
+}
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background-color: #4504ae;
+  top: 160px;
+  bottom: 80px;
+  left: 50%;
+  margin-left: -2px;
+}
+
+/* ============================== */
+/* Projects                       */
+/* ============================== */
 
 .projects-title {
   font-size: 2em;
@@ -181,6 +286,7 @@ body {
 .projects-section {
   text-align: center;
   margin-top: 50px;
+  width: 100%;
 }
 
 .projects-wrapper {
@@ -188,9 +294,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  height: auto;
   margin: 0 auto;
-  max-width: 1100px;
+  max-width: 70%;
 }
 
 .project-list {
@@ -222,17 +328,19 @@ body {
 } */
 
 .project-image {
-  width: 500px;
-  height: 300px;
+  width: 300px;
+  height: 200px;
   border-radius: 10px;
   background: white;
   align-items: center;
 }
 
 .project-title {
-  margin-top: 1px;
+  margin-top: 0px;
   text-align: center;
   font-size: 1.5em;
+  font-weight: bold;
+  height: 40px;
 }
 
 .project-content {
@@ -240,22 +348,22 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  text-align: left;
+  text-align: center;
   flex-direction: row-reverse;
-  height: 500px;
 }
 
 .project-description {
   flex: 1;
-  font-size: 1.5em;
+  font-size: 1.1em;
   /* color: #666; */
   margin-right: 20px;
-  width: 100%;
-  height: 200px;
+  width: center;
+  height: 150px;
 }
 .project-description-container {
-  margin-top: 50px;
+  margin-top: 0px;
   flex-grow: 1;
+  width: 600px;
 }
 
 .tools-icons {
@@ -288,14 +396,14 @@ body {
 }
 
 .scroll-button.left {
-  left: -50px;
+  left: -70px;
 }
 .scroll-button.right {
-  right: -50px;
+  right: -60px;
 }
 .scroll-button svg {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   fill: #4504ae;
   transition: transform 0.3s ease;
 }
@@ -319,102 +427,52 @@ body {
 .dot.active {
   background-color: #717171;
 }
+/* ============================== */
+/* papers                       */
+/* ============================== */
 
-.timeline {
-  padding: 50px 20px;
-}
-
-.timeline-container {
-  flex-direction: column;
-  position: relative;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 10px 0;
+.papers-section {
+  padding: 2rem;
+  text-align: center;
 }
 
-.time-line-container {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+.papers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
-.timeline-item {
-  width: 50%;
-  padding: 20px;
-  position: relative;
+.paper-card {
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.timeline-item.left {
-  left: -5%;
+.download-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.timeline-item.right {
-  left: 51%;
+.download-btn:hover {
+  background-color: #45a049;
 }
 
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  top: 40%;
-  right: -1%;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #4504ae;
-  /* border: 3px solid white; */
+/* ============================== */
+/* about                       */
+/* ============================== */
+.about {
+  height: 500px;
 }
-
-.timeline-item.right::before {
-  left: -4.5%;
-}
-.timeline-content {
-  padding: 20px;
-  background: transparent;
-  position: relative;
-  border-radius: 6px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.timeline-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.timeline-date {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-.timeline-desc {
-  font-size: 16px;
-  color: #666;
-}
-.timeline-desc {
-  font-size: 1.1rem;
-}
-
-/* .timeline-content::before {
-  content: "";
-  position: absolute;
-  top: 15px;
-  right: -8px;
-  border-style: solid;
-  border-width: 8px 0 8px 8px;
-  border-color: transparent transparent transparent #f1f1f1;
-} */
-
-.timeline-container::before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  background-color: #4504ae;
-  top: 240px;
-  bottom: 170px;
-  left: 50%;
-  margin-left: -2px;
-}
+/* ============================== */
+/* Dark and Light Mode            */
+/* ============================== */
 
 .dark-mode {
   /* background: linear-gradient(to bottom, #6a6a6a, #0b0b0b); */
@@ -432,7 +490,7 @@ body {
 .light-mode {
   /* background: linear-gradient(to bottom, #6f6d6d, #ffffff); */
   background: white;
-  color: #666;
+  color: #333;
 }
 
 .light-mode .nav {
@@ -444,8 +502,12 @@ body {
   padding: 10px;
 }
 .light-mode .title {
-  color: black;
+  color: #333;
 }
+
+/* ============================== */
+/* Responsive                     */
+/* ============================== */
 @media (max-width: 600px) {
   .nav {
     flex-direction: column;

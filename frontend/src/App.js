@@ -16,6 +16,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 import "./App.css";
 import Timeline from "./Timeline";
+import Papers from "./papers";
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
@@ -113,8 +114,8 @@ const Portfolio = () => {
         {/* <h2 className="name">Leonardo Rodriguez</h2> */}
         <ul className="nav-links">
           <li
-            className={activeSection === "Experience" ? "active" : ""}
-            onClick={() => scrollToSection("Experience", 0)}
+            className={activeSection === "experience" ? "active" : ""}
+            onClick={() => scrollToSection("experience", 0)}
           >
             Experience
           </li>
@@ -128,7 +129,7 @@ const Portfolio = () => {
             className={activeSection === "papers" ? "active" : ""}
             onClick={() => scrollToSection("papers", 2)}
           >
-            Papers
+            Research
           </li>
           <li
             className={activeSection === "about" ? "active" : ""}
@@ -144,7 +145,7 @@ const Portfolio = () => {
           </div>
         </ul>
       </nav>
-      <section className="header-section">
+      <section id="header-section" className="header-section">
         <div className="intro">
           <h1 className="name-title">Leonardo Rodriguez</h1>
           <div className="availability">
@@ -172,7 +173,7 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-      <section id="Experience" ref={(el) => (sectionsRef.current[0] = el)}>
+      <section id="experience" ref={(el) => (sectionsRef.current[0] = el)}>
         <div className="Experience">
           {/* <h1 className="Experience">Experience</h1> */}
           <Timeline></Timeline>
@@ -180,7 +181,7 @@ const Portfolio = () => {
       </section>
       <section id="projects" ref={(el) => (sectionsRef.current[1] = el)}>
         <div className="projects-section">
-          Projects Content
+          {/* Projects Content */}
           <h2 className="projects-title">My Projects</h2>
           <div className="projects-wrapper">
             <button className="scroll-button left" onClick={handlePrevProject}>
@@ -241,6 +242,7 @@ const Portfolio = () => {
       </section>
       <section id="papers" ref={(el) => (sectionsRef.current[2] = el)}>
         <div className="papers">Research</div>
+        <Papers></Papers>
       </section>
       <section id="about" ref={(el) => (sectionsRef.current[3] = el)}>
         <div className="about">
