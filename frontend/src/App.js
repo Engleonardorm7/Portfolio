@@ -241,27 +241,58 @@ const Portfolio = () => {
         </div>
       </section>
       <section id="papers" ref={(el) => (sectionsRef.current[2] = el)}>
-        <div className="papers">Research</div>
+        {/* <div className="papers">Research</div> */}
         <Papers></Papers>
       </section>
       <section id="about" ref={(el) => (sectionsRef.current[3] = el)}>
         <div className="about">
-          About Content
           <h1>About me</h1>
-          <p className="description">
-            I am a Mechatronic Engineer with over six years of experience in
-            various fields of mechatronics, and I am currently pursuing a
-            Master's degree in Artificial Intelligence and Robotics. I have a
-            strong passion for programming and I am seeking an opportunity to
-            align my career focus with my passion for programming, artificial
-            intelligence, and robotics. I have a solid foundation in programming
-            languages such as Python, Java, C/C++, and JavaScript, as well as
-            experience with frameworks like Django, Flask, and FastAPI. I am
-            eager to contribute to a team and make a meaningful impact with my
-            experience and enthusiasm for programming.
+          <p className="about-description">
+            I am a Mechatronic Engineer with over eight years of experience
+            across diverse areas within mechatronics. Currently, I am pursuing a
+            Master’s degree in Artificial Intelligence and Robotics, which
+            aligns with my deep passion for technology and innovation.
           </p>
+
+          <p className="about-description">
+            With a strong focus on programming, I am seeking opportunities that
+            allow me to combine my expertise in software development with my
+            interests in AI and robotics. My technical foundation includes
+            proficiency in programming languages such as Python, Java, C/C++,
+            and JavaScript, alongside hands-on experience with frameworks like
+            Django, Flask, FastAPI, and React.
+          </p>
+
+          <p className="about-description">
+            {" "}
+            I am eager to leverage my technical background, problem-solving
+            skills, and enthusiasm for emerging technologies to contribute
+            meaningfully to a forward-thinking team and drive impactful results.
+          </p>
+          <a href="mailto:leonardorm7@hotmail.com" className="contact-btn">
+            Contact
+          </a>
         </div>
       </section>
+      <footer className="footer">
+        <p>&copy; 2024 Leonardo Rodriguez.</p>
+        <div className="footer-links">
+          <a
+            href="https://www.linkedin.com/in/leonardo-rodriguez7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/Engleonardorm7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
+      </footer>
     </div>
   );
 };
