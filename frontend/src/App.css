@@ -171,11 +171,13 @@
 }
 
 .timeline-container {
+  display: flex;
   flex-direction: column;
   position: relative;
-  max-width: 700px;
+  max-width: 80%;
   margin: 0 auto;
   padding: 10px 0;
+  margin-bottom: 10%;
 }
 
 .time-line-container {
@@ -232,21 +234,21 @@
 
 .timeline-item.left {
   align-self: flex-start;
-  left: -5.2%;
+  left: -2.8%;
   height: 90px;
 }
 
 .timeline-item.right {
-  left: 51.5%;
+  left: 51.6%;
   height: 90px;
 }
 .timeline-item::before {
   content: "";
   position: absolute;
   top: 40%;
-  right: -1%;
-  width: 15px;
-  height: 15px;
+  right: 1%;
+  width: 0.9rem;
+  height: 0.9rem;
   border-radius: 50%;
   background-color: #6c63ff;
   /* border: 3px solid white; */
@@ -256,8 +258,8 @@
   position: absolute;
   width: 4px;
   background-color: #6c63ff;
-  top: 160px;
-  bottom: 80px;
+  top: 16%;
+  bottom: 8%;
   left: 50%;
   margin-left: -2px;
 }
@@ -267,7 +269,7 @@
 /* ============================== */
 
 .projects-title {
-  margin-top: 200px;
+  padding-top: 6%;
   font-size: 2em;
   margin-bottom: 20px;
 }
@@ -290,11 +292,10 @@
 
 .project-list {
   display: flex;
-  gap: 20px;
   overflow-x: auto;
-  padding: 20px;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  width: 100%;
 }
 
 .project-item {
@@ -302,7 +303,7 @@
   border-radius: 10px;
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); */
   padding: 20px;
-  max-width: 1000px;
+  max-width: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -317,8 +318,8 @@
 } */
 
 .project-image {
-  width: 300px;
-  height: 200px;
+  width: 17rem;
+  height: 13rem;
   border-radius: 10px;
   background: white;
   align-items: center;
@@ -329,7 +330,7 @@
   text-align: center;
   font-size: 1.5em;
   font-weight: bold;
-  height: 40px;
+  height: auto;
 }
 
 .project-content {
@@ -347,12 +348,12 @@
   /* color: #666; */
   margin-right: 20px;
   width: center;
-  height: 150px;
+  height: auto;
 }
 .project-description-container {
   margin-top: 0px;
   flex-grow: 1;
-  width: 600px;
+  width: 50%;
 }
 
 .tools-icons {
@@ -426,7 +427,7 @@
 }
 
 .section-title {
-  margin-top: 200px;
+  padding-top: 6%;
   text-align: center;
   font-size: 2em;
   width: 100%;
@@ -508,6 +509,7 @@
   text-align: center;
 }
 .about h1 {
+  padding-top: 15%;
   font-size: 2em;
 }
 
@@ -620,27 +622,137 @@
 /* ============================== */
 /* Responsive                     */
 /* ============================== */
-@media (max-width: 600px) {
-  .nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .project-item {
-    flex: 0 0 80%;
+@media (max-width: 768px) {
+  .timeline-container {
+    max-width: 90%;
   }
 
-  .timeline-item {
+  .timeline-item.left,
+  .timeline-item.right {
     width: 100%;
     left: 0;
   }
+
+  .timeline-item.right::before {
+    left: 0;
+  }
+
+  .timeline-item.left::before {
+    left: 0;
+  }
+
+  .timeline-container::before {
+    left: 2%; /* Ajustar la línea para pantallas más pequeñas */
+  }
+
+  .timeline-item::before {
+    left: -4%; /* Ajustar la posición del círculo */
+  }
+  /*----------------*/
+  .projects-wrapper {
+    max-width: 90%; /* Ajuste en pantallas más pequeñas */
+  }
+
+  .project-content {
+    flex-direction: column; /* Cambiar la disposición a vertical */
+  }
+
+  .project-title {
+    font-size: 1.3em; /* Ajustar el tamaño de la fuente */
+  }
+
+  .project-description {
+    margin-right: 0;
+    margin-bottom: 10px;
+    text-align: center; /* Centrar texto en pantallas pequeñas */
+  }
+
+  .scroll-button.left {
+    left: -50px;
+  }
+
+  .scroll-button.right {
+    right: -40px;
+  }
+
+  .scroll-button svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .project-image {
+    width: 100%; /* Imagen ajustada al 100% del ancho */
+    max-width: 15rem; /* Ajuste para pantallas más pequeñas */
+  }
+  /*-------------*/
+  .section-title {
+    font-size: 1.5em; /* Disminuir tamaño de fuente en móviles */
+  }
+
+  .paper-title {
+    font-size: 1.2em; /* Ajustar tamaño de título */
+  }
+
+  .paper-description {
+    font-size: 0.9em; /* Ajustar tamaño de descripción */
+  }
+
+  .download-btn {
+    padding: 0.5rem 1rem; /* Ajustar padding de botón */
+  }
+
+  .about h1 {
+    font-size: 1.5em; /* Disminuir tamaño del título de la sección 'about' */
+  }
+}
+
+@media (max-width: 480px) {
   .timeline-content {
     padding: 10px;
   }
-  .timeline-container:before {
-    left: 20px;
+
+  .timeline-title,
+  .timeline-date,
+  .timeline-company {
+    font-size: 0.9rem;
+  }
+
+  .timeline-item::before {
+    width: 0.7rem;
+    height: 0.7rem;
+    left: -6%;
+  }
+
+  .timeline-container::before {
+    left: 5%; /* Ajustar aún más para pantallas pequeñas */
+  }
+  /*----------------------*/
+  .projects-wrapper {
+    max-width: 100%; /* Ocupa todo el ancho disponible */
+  }
+
+  .project-title {
+    font-size: 1.2em; /* Reducir aún más el tamaño de la fuente */
+  }
+
+  .project-description {
+    font-size: 1em; /* Reducir tamaño de la fuente para mejor legibilidad */
+  }
+
+  .scroll-button.left {
+    left: -30px;
+  }
+
+  .scroll-button.right {
+    right: -30px;
+  }
+
+  .scroll-button svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .project-image {
+    max-width: 100%; /* Imagen al 100% para pantallas móviles */
   }
 }

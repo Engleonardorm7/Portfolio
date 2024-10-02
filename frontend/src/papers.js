@@ -30,7 +30,7 @@ const Papers = () => {
   };
   const handlePrevPaper = () => {
     setCurrentPaperIndex((prevIndex) =>
-      prevIndex === 0 ? prevIndex.length - 1 : prevIndex - 1
+      prevIndex === 0 ? papers.length - 1 : prevIndex - 1
     );
   };
 

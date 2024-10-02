@@ -22,11 +22,17 @@ const Portfolio = () => {
     };
 
     const observer = new IntersectionObserver((entries) => {
+      let noSectionVisible = true;
+
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id); // Cambia la sección activa al id de la sección visible
+          noSectionVisible = false;
         }
       });
+      if (noSectionVisible) {
+        setActiveSection("");
+      }
     }, observerOptions);
 
     sectionsRef.current.forEach((section) => {
