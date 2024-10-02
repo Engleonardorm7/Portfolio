@@ -58,7 +58,7 @@ const Papers = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="download-btn">Download PDF</button>
+                <button className="download-btn"> PDF</button>
               </a>
             </div>
           </div>

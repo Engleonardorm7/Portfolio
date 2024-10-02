@@ -62,7 +62,6 @@
   margin-bottom: 1rem;
   margin-top: 0px;
   font-weight: bold;
-  color: #333;
 }
 .availability {
   display: flex;
@@ -104,24 +103,24 @@
 }
 
 .icons {
-  font-size: 40px;
-  color: #333;
+  font-size: 30px;
+
   display: flex;
   margin-bottom: 20px;
 }
 
 .cv-button {
-  background: #333;
+  text-decoration: none;
   cursor: pointer;
   border: none;
-  padding: 10px 10px;
-  -webkit-text-fill-color: white;
-  font-size: 20px;
+  padding: 5px 5px;
+  font-size: 16px;
   font-weight: bold;
   position: relative;
   border-radius: 50%;
   margin-bottom: 20px;
 }
+
 /* .cv-button::before {
   content: "";
   position: absolute;
@@ -164,7 +163,7 @@
   margin-right: 20px;
   width: 42px;
   height: 30px;
-  color: #333;
+  color: #bab4b4;
 }
 
 .timeline {
@@ -582,6 +581,19 @@
   color: rgb(195, 189, 189);
   padding: 10px;
 }
+.dark-mode .social-icon {
+  color: #bab4b4;
+}
+.dark-mode .experience-icon {
+  color: #bab4b4;
+}
+.dark-mode .footer-links a {
+  color: #bab4b4;
+}
+.dark-mode .cv-button {
+  background-color: #bab4b4;
+}
+
 .light-mode {
   /* background: linear-gradient(to bottom, #6f6d6d, #ffffff); */
   background: white;
@@ -596,8 +608,13 @@
   color: black;
   padding: 10px;
 }
-.light-mode .title {
-  color: #333;
+.light-mode .social-icon,
+.experience-icon {
+  color: #000;
+}
+.light-mode .cv-button {
+  background-color: #000;
+  color: white;
 }
 
 /* ============================== */
