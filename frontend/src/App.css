@@ -171,10 +171,11 @@
 }
 
 .timeline-container {
+  width: 800px;
   display: flex;
   flex-direction: column;
   position: relative;
-  max-width: 80%;
+  /* max-width: 80%; */
   margin: 0 auto;
   padding: 10px 0;
   margin-bottom: 10%;
@@ -234,7 +235,7 @@
 
 .timeline-item.left {
   align-self: flex-start;
-  left: -2.8%;
+  left: -3.5%;
   height: 90px;
 }
 
@@ -244,6 +245,7 @@
 }
 .timeline-item::before {
   content: "";
+  margin-top: 50px;
   position: absolute;
   top: 40%;
   right: 1%;
@@ -255,11 +257,12 @@
 }
 .timeline-container::before {
   content: "";
+  margin-top: 50px;
   position: absolute;
   width: 4px;
   background-color: #6c63ff;
   top: 16%;
-  bottom: 8%;
+  bottom: 3%;
   left: 50%;
   margin-left: -2px;
 }
@@ -435,6 +438,7 @@
 .papers-wrapper {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: auto;
@@ -443,6 +447,7 @@
 }
 .paper-item {
   display: flex;
+  flex-direction: row;
   align-items: center;
   width: 100%;
   justify-content: space-between;
@@ -456,12 +461,15 @@
 }
 
 .paper-image-container {
+  display: flex;
   flex-shrink: 0;
 }
 
 .paper-image {
-  width: 300px;
-  height: 400px;
+  max-width: 300px;
+
+  width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 .paper-description-container {
@@ -479,11 +487,11 @@
   font-size: 1em;
   margin: 10px 0;
   text-align: justify;
-  height: 150px;
+  max-height: 150px;
 }
 
 .download-btn {
-  margin-top: 1rem;
+  margin-top: 5rem;
   padding: 0.75rem 1.5rem;
   background-color: #6c63ff;
   color: white;
@@ -623,6 +631,17 @@
 /* Responsive                     */
 /* ============================== */
 @media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 10px;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  /*------------------timeline-------------*/
   .timeline-container {
     max-width: 90%;
   }
@@ -648,7 +667,7 @@
   .timeline-item::before {
     left: -4%; /* Ajustar la posición del círculo */
   }
-  /*----------------*/
+  /*---------PROJECTS-------*/
   .projects-wrapper {
     max-width: 90%; /* Ajuste en pantallas más pequeñas */
   }
@@ -684,25 +703,64 @@
     width: 100%; /* Imagen ajustada al 100% del ancho */
     max-width: 15rem; /* Ajuste para pantallas más pequeñas */
   }
-  /*-------------*/
+  /*-------Paper------*/
+
   .section-title {
-    font-size: 1.5em; /* Disminuir tamaño de fuente en móviles */
+    font-size: 1.5em;
   }
 
   .paper-title {
-    font-size: 1.2em; /* Ajustar tamaño de título */
+    font-size: 1.2em;
   }
-
+  .paper-item {
+    flex-direction: column;
+    align-items: center;
+  }
+  .paper-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .paper-image {
+    max-width: 50%;
+    margin-left: 20%;
+  }
+  .papers-wrapper {
+    max-width: 100%;
+  }
   .paper-description {
-    font-size: 0.9em; /* Ajustar tamaño de descripción */
+    font-size: 0.9em;
+  }
+  .paper-description-container {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+    text-align: center;
   }
 
   .download-btn {
-    padding: 0.5rem 1rem; /* Ajustar padding de botón */
+    padding: 0.5rem 1rem;
   }
 
   .about h1 {
-    font-size: 1.5em; /* Disminuir tamaño del título de la sección 'about' */
+    font-size: 1.5em;
+  }
+
+  /*-------------footer------*/
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer p {
+    margin-top: 100px;
+    margin-right: 0;
+    margin-bottom: 1px;
+  }
+
+  .footer-links {
+    flex-direction: column; /* Apila los enlaces en lugar de mostrarlos en fila */
+    gap: 5px; /* Reduce el espacio entre enlaces */
   }
 }
 
@@ -724,9 +782,9 @@
   }
 
   .timeline-container::before {
-    left: 5%; /* Ajustar aún más para pantallas pequeñas */
+    left: 1.7%; /* Ajustar aún más para pantallas pequeñas */
   }
-  /*----------------------*/
+  /*-----------Projects-----------*/
   .projects-wrapper {
     max-width: 100%; /* Ocupa todo el ancho disponible */
   }
