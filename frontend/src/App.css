@@ -42,7 +42,7 @@
 /* ============================== */
 
 .header-section {
-  height: 550px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,7 +58,7 @@
 }
 
 .name-title {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
   margin-top: 0px;
   font-weight: bold;
@@ -261,7 +261,7 @@
   position: absolute;
   width: 4px;
   background-color: #6c63ff;
-  top: 16%;
+  top: 13%;                         /* parameter to modify height of the vertical line */
   bottom: 3%;
   left: 50%;
   margin-left: -2px;
@@ -290,7 +290,7 @@
   align-items: center;
   height: auto;
   margin: 0 auto;
-  max-width: 70%;
+  max-width: 50%;
 }
 
 .project-list {
@@ -421,7 +421,7 @@
   background-color: #717171;
 }
 /* ============================== */
-/* papers                       */
+/* Research                       */
 /* ============================== */
 
 .papers-section {
@@ -447,7 +447,7 @@
 }
 .paper-item {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   width: 100%;
   justify-content: space-between;
@@ -456,8 +456,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  width: 100%;
+  width: 70%;
 }
 
 .paper-image-container {

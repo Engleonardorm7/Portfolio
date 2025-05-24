@@ -1,0 +1,7 @@
+{
+  "homepage": "https://engleonardorm7.github.io/ReactPortfolio/",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  }
+}
