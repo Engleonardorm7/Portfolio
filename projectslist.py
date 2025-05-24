@@ -198,28 +198,10 @@ def load_projects():
                 'title': 'PPT-AI: AI-Powered Presentation Generator', 
                 'description': 'PPT-AI is a smart chatbot that uses a fine-tuned Qwen language model to create PowerPoint presentations automatically. I developed a custom API to control PowerPoint, allowing the LLM to generate slides from user instructions—including bullet points, images, and descriptions—and export the final result as a ready-to-use PDF.', 
                 'url': 'https://github.com/Engleonardorm7/PPT-AI-AI-Powered-Presentation-Generator',
-                'image': 'https://github.com/Engleonardorm7/Portfolio/blob/Deploy/media/portfolio/images/PPT-AI.jpg?raw=true',
+                'image': 'https://github.com/Engleonardorm7/Portfolio/blob/projectReact/media/portfolio/images/PPT-AI.jpg?raw=true',
                 'tools_box': ['python'],
 
             },
-            {
-                'title': '', 
-                'description': 'This project controls the Niryo Ned2 robotic arm using a YOLO image detection model to detect and press elevator buttons', 
-                'url': 'https://github.com/Engleonardorm7/Elevator-Botton-Arm-Control',
-                'image': 'https://github.com/Engleonardorm7/Portfolio/blob/Deploy/media/portfolio/images/Ned2.2.jpg?raw=true',
-                'tools_box': ['python'],
-
-            },
-            {
-                'title': '', 
-                'description': 'This project controls the Niryo Ned2 robotic arm using a YOLO image detection model to detect and press elevator buttons', 
-                'url': 'https://github.com/Engleonardorm7/Elevator-Botton-Arm-Control',
-                'image': 'https://github.com/Engleonardorm7/Portfolio/blob/Deploy/media/portfolio/images/Ned2.2.jpg?raw=true',
-                'tools_box': ['python'],
-
-            },
-
-
 
 
 
@@ -299,7 +281,7 @@ def load_projects():
                 'title': 'Twitter API', 
                 'description': 'This is a twitter api clone developed in FastAPI Features included: Data validation, CRUD of users, CRUD of Tweets.', 
                 'url': 'https://github.com/Engleonardorm7/Twitter-API-FastApi',
-                'image': 'https://github.com/Engleonardorm7/Portfolio/blob/Deploy/media/portfolio/images/Twitter_API.png?raw=true',
+                'image': 'https://githu  b.com/Engleonardorm7/Portfolio/blob/Deploy/media/portfolio/images/Twitter_API.png?raw=true',
                 'tools_box': ['django','fastAPI'],   
             },
             {
